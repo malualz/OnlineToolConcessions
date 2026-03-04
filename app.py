@@ -8,12 +8,12 @@ VIRIDIS = [
     "#440154", "#482878", "#3E4A89", "#31688E", "#26828E", "#1F9E89", "#35B779", "#6CCE59", "#B4DE2C", "#FDE725"
 ]
 
-# Customização do fundo e título
+# Customização do título e métricas com Viridis, fundo branco
 st.markdown(
     f"""
     <style>
         .stApp {{
-            background: linear-gradient(135deg, {VIRIDIS[0]} 0%, {VIRIDIS[-1]} 100%);
+            background: #fff;
         }}
         h1 {{
             color: {VIRIDIS[7]};
@@ -39,6 +39,7 @@ with col1:
 with col2:
     area_novo = st.number_input("Área do cenário selecionado (hectares)", min_value=0.0, value=500000.0, step=1000.0, format="%0.0f")
 
+
 if st.button("Comparar Cenários"):
     resultados_atual = calcular_impacto_concessoes(area_atual)
     resultados_novo = calcular_impacto_concessoes(area_novo)
@@ -57,3 +58,25 @@ if st.button("Comparar Cenários"):
         st.metric("Empregos Gerados", f"{resultados_novo['Empregos Gerados']:,.0f}")
         st.metric("Potencial Financeiro (R$)", f"{resultados_novo['Potencial Financeiro (R$)']:,.2f}")
         st.metric("Investimento Necessário (R$)", f"{resultados_novo['Investimento Necessário (R$)']:,.2f}")
+
+    # Gráficos comparativos
+    import pandas as pd
+    dados = {
+        "Indicador": ["Carbono (Ton/Ano)", "Empregos Gerados", "Potencial Financeiro (R$)", "Investimento Necessário (R$)"],
+        "Cenário Atual": [
+            resultados_atual["Carbono (Ton/Ano)"],
+            resultados_atual["Empregos Gerados"],
+            resultados_atual["Potencial Financeiro (R$)"],
+            resultados_atual["Investimento Necessário (R$)"]
+        ],
+        "Cenário Selecionado": [
+            resultados_novo["Carbono (Ton/Ano)"],
+            resultados_novo["Empregos Gerados"],
+            resultados_novo["Potencial Financeiro (R$)"],
+            resultados_novo["Investimento Necessário (R$)"]
+        ]
+    }
+    df = pd.DataFrame(dados)
+    df.set_index("Indicador", inplace=True)
+    st.markdown("### Gráfico Comparativo")
+    st.bar_chart(df)
