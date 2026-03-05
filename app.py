@@ -10,12 +10,12 @@ st.set_page_config(
 )
 
 METRIC_META = {
-    "Carbono (Ton/Ano)": ("Carbono retido por ano", False, "Carbono retido por ano"),
-    "Empregos Gerados": ("Empregos diretos estimados", False, "Empregos diretos estimados"),
-    "Potencial Financeiro (R$)": ("Receita potencial anual", True, "Potencial financeiro"),
-    "Investimento Necessario (R$)": ("Investimento necessario anual", True, "Investimento necessario"),
-    "Investimento Necessário (R$)": ("Investimento necessario anual", True, "Investimento necessario"),
-    "Investimento NecessÃ¡rio (R$)": ("Investimento necessario anual", True, "Investimento necessario"),
+    "Carbono (Ton/Ano)": ("Carbono retido por ano", "t/ano", "Carbono retido por ano"),
+    "Empregos Gerados": ("Empregos diretos estimados", "emp", "Empregos diretos estimados"),
+    "Potencial Financeiro (R$)": ("Receita potencial anual", "R$", "Potencial financeiro"),
+    "Investimento Necessario (R$)": ("Investimento necessario anual", "R$", "Investimento necessario"),
+    "Investimento Necessário (R$)": ("Investimento necessario anual", "R$", "Investimento necessario"),
+    "Investimento NecessÃ¡rio (R$)": ("Investimento necessario anual", "R$", "Investimento necessario"),
 }
 
 st.markdown(
@@ -89,6 +89,19 @@ st.markdown(
         font-size: 0.9rem;
     }
 
+    .unit-badge {
+        display: inline-block;
+        margin-top: 1.8rem;
+        padding: 0.38rem 0.58rem;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: #f4f8f5;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--primary);
+        text-align: center;
+    }
+
     .stButton > button {
         background: linear-gradient(130deg, #1c5b3e 0%, #2f7a58 100%);
         color: white;
@@ -114,6 +127,26 @@ def format_number(value: float, is_currency: bool = False) -> str:
     return number
 
 
+def format_short_number(value: float, unit: str = "") -> str:
+    abs_value = abs(value)
+    if abs_value >= 1_000_000_000_000:
+        short = f"{value / 1_000_000_000_000:.1f}".rstrip("0").rstrip(".")
+        label = f"{short}tri"
+    elif abs_value >= 1_000_000_000:
+        short = f"{value / 1_000_000_000:.1f}".rstrip("0").rstrip(".")
+        label = f"{short}bi"
+    elif abs_value >= 1_000_000:
+        short = f"{value / 1_000_000:.1f}".rstrip("0").rstrip(".")
+        label = f"{short}mi"
+    elif abs_value >= 1_000:
+        short = f"{value / 1_000:.1f}".rstrip("0").rstrip(".")
+        label = f"{short}mil"
+    else:
+        label = f"{value:.0f}"
+
+    return f"{unit} {label}".strip()
+
+
 st.markdown(
     """
     <div class="hero">
@@ -133,18 +166,20 @@ with st.form("simulacao_form"):
         area_atual = st.number_input(
             "Area do cenario atual (hectares)",
             min_value=0.0,
-            value=100000.0,
+            value=1000.0,
             step=1000.0,
             format="%0.0f",
         )
+        st.caption("Valor inicial: 1 mil hectares")
     with col_b:
         area_novo = st.number_input(
             "Area do cenario projetado (hectares)",
             min_value=0.0,
-            value=500000.0,
+            value=5000.0,
             step=1000.0,
             format="%0.0f",
         )
+        st.caption("Valor inicial: 5 mil hectares")
 
     submitted = st.form_submit_button("Comparar cenarios")
 
@@ -158,7 +193,7 @@ if submitted:
     resumo = pd.DataFrame(
         [
             {
-                "Indicador": METRIC_META.get(key, ("Indicador calculado", False, key))[2],
+                "Indicador": METRIC_META.get(key, ("Indicador calculado", "", key))[2],
                 "Atual": resultados_atual[key],
                 "Projetado": resultados_novo[key],
                 "Delta": resultados_novo[key] - resultados_atual[key],
@@ -174,7 +209,7 @@ if submitted:
     grid_left, grid_right = st.columns(2)
 
     for index, key in enumerate(metric_keys):
-        subtitle, is_currency, display_title = METRIC_META.get(key, ("Indicador calculado", False, key))
+        subtitle, unit, display_title = METRIC_META.get(key, ("Indicador calculado", "", key))
         target_col = grid_left if index % 2 == 0 else grid_right
 
         with target_col:
@@ -182,24 +217,28 @@ if submitted:
             st.markdown(f'<p class="kpi-title">{display_title}</p>', unsafe_allow_html=True)
             st.markdown(f'<p class="kpi-sub">{subtitle}</p>', unsafe_allow_html=True)
 
-            chart_df = pd.DataFrame(
-                {
-                    "Cenario": ["Atual", "Projetado"],
-                    "Valor": [resultados_atual[key], resultados_novo[key]],
-                }
-            ).set_index("Cenario")
-            st.bar_chart(chart_df, color=["#4f7c62"])
+            unit_col, chart_col = st.columns([1, 7])
+            with unit_col:
+                st.markdown(f'<div class="unit-badge">{unit or "-"}</div>', unsafe_allow_html=True)
+            with chart_col:
+                chart_df = pd.DataFrame(
+                    {
+                        "Cenario": ["Atual", "Projetado"],
+                        "Valor": [resultados_atual[key], resultados_novo[key]],
+                    }
+                ).set_index("Cenario")
+                st.bar_chart(chart_df, color=["#4f7c62"])
 
             metric_col_1, metric_col_2 = st.columns(2)
             delta = resultados_novo[key] - resultados_atual[key]
 
             with metric_col_1:
-                st.metric("Atual", format_number(resultados_atual[key], is_currency))
+                st.metric("Atual", format_short_number(resultados_atual[key], unit))
             with metric_col_2:
                 st.metric(
                     "Projetado",
-                    format_number(resultados_novo[key], is_currency),
-                    delta=format_number(delta, is_currency),
+                    format_short_number(resultados_novo[key], unit),
+                    delta=format_short_number(delta, unit),
                 )
             st.markdown("</div>", unsafe_allow_html=True)
 
