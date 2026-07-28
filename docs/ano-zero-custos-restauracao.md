@@ -1,8 +1,19 @@
 # Custos de Ano 0 na análise custo-benefício de restauração
 
-Documento analítico sobre a incorporação de custos de Ano 0 (pré-implantação e implantação inicial)
-em uma análise custo-benefício com horizonte de 20 anos, aplicada a três métodos de restauração:
-ANR (regeneração natural assistida), semeadura direta (*seeding*) e plantio de mudas (*seedling*).
+Documento analítico sobre a incorporação de linhas de custo de Ano 0 (pré-implantação e implantação
+inicial) na plataforma de análise custo-benefício do projeto, que opera com indicadores econômicos
+clássicos — valor presente líquido, taxa interna de retorno, razão benefício-custo e prazo de
+retorno — sobre um horizonte de 20 anos, para três métodos de restauração: ANR (regeneração natural
+assistida), semeadura direta (*seeding*) e plantio de mudas (*seedling*).
+
+**Escopo.** O questionário de custos de restauração é tratado como ponto de partida para a
+identificação de categorias e lacunas. Nenhuma recomendação deste documento se dirige à modificação
+daquele questionário; o destino das linhas de custo é a plataforma de análise custo-benefício.
+
+**Premissa sobre a plataforma-alvo.** Na ausência de especificação, o destino é tratado como um
+modelo anual de fluxo de caixa incremental descontado, com indicadores derivados desse fluxo. As
+recomendações são agnósticas de implementação e se expressam como atributos de linha de custo e
+regras de mapeamento para o fluxo.
 
 ---
 
@@ -68,11 +79,11 @@ terceirizável, caso em que o custo migra para o preço unitário de um insumo o
 |---|---|---|---|---|---|---|---|---|
 | 1 | Infraestrutura física de viveiro | Canteiros, bancadas, estufa/casa de vegetação, sombrite, telado, galpão de substrato, área de rustificação, cercamento do viveiro | Parcial (enriquecimento) | Não | Sim | CP, T | Alta para *seedling*; nula para *seeding* puro | não verificado |
 | 2 | Sistemas e equipamentos de viveiro | Captação e adução de água, irrigação (aspersão/nebulização), reservatório, bombeamento, energia/gerador, misturador de substrato, encanteirador, ferramental | Parcial | Não | Sim | CP, T | Alta para *seedling* | não verificado |
-| 3 | Capital de giro da produção de mudas | Insumos consumíveis (tubetes, substrato, fertilizantes, defensivos), mão de obra de viveiro, perdas por mortalidade e descarte de padrão, custo do ciclo de produção que antecede o plantio (desembolso em Ano −1) | Parcial | Não | Sim | D, T | Alta para *seedling*; introduz defasagem temporal relevante | não verificado |
+| 3 | Capital de giro da produção de mudas | Insumos consumíveis (tubetes, substrato, fertilizantes, defensivos), mão de obra de viveiro, perdas por mortalidade e descarte de padrão, custo do ciclo de produção que antecede o plantio | Parcial | Não | Sim | D, T | Alta para *seedling*; introduz defasagem temporal relevante | não verificado |
 | 4 | Coleta de sementes | Identificação e cadastro de matrizes, expedições de coleta, mão de obra especializada, escalada e EPI, transporte, sazonalidade e repetição de safras para compor diversidade | Parcial | Sim | Sim | CM, CP, T | Alta para *seeding*; dominante quando há exigência de riqueza específica | não verificado |
-| 5 | Beneficiamento e armazenamento de sementes | Casa de sementes, secagem, extração, peneiramento, tratamento pré-germinativo, câmara fria e desumidificação, embalagens; ativos fixos e operação | Parcial | Sim | Sim | CM, CP, T | Média a alta para *seeding* | não verificado |
+| 5 | Beneficiamento e armazenamento de sementes | Casa de sementes, secagem, extração, peneiramento, tratamento pré-germinativo, câmara fria e desumidificação, embalagens | Parcial | Sim | Sim | CM, CP, T | Média a alta para *seeding* | não verificado |
 | 6 | Análise e controle de qualidade de sementes | Testes de germinação, pureza, viabilidade, teor de umidade; laudos por lote | Parcial | Sim | Sim | D por lote, CP quanto ao laboratório | Média; condiciona a taxa de semeadura | não verificado |
-| 7 | Registro e certificação de sementes e mudas | Registro do produtor em sistema nacional de sementes e mudas, inscrição de campos de produção e de matrizes, emissão de notas e termos de conformidade, cadeia de custódia e rastreabilidade | Parcial | Sim | Sim | CP | Média; predominantemente custo fixo, sensível à escala | não verificado |
+| 7 | Registro e certificação de sementes e mudas | Registro do produtor em sistema nacional de sementes e mudas, inscrição de campos de produção e de matrizes, termos de conformidade, cadeia de custódia e rastreabilidade | Parcial | Sim | Sim | CP | Média; predominantemente fixo, sensível à escala | não verificado |
 | 8 | Certificação ambiental e de carbono | Documento de concepção do projeto, validação inicial por terceira parte, taxa de registro em *registry*, estudo de adicionalidade e cenário de referência, definição de fronteira e de vazamento, auditoria de linha de base | Sim | Sim | Sim | CM, CP | Alta em projetos com receita de crédito; fixo e regressivo com a escala | não verificado |
 | 9 | Certificação de manejo e cadeia de custódia | Certificação florestal e auditoria inicial, quando há componente madeireiro ou de produtos florestais no fluxo de benefícios | Sim | Sim | Sim | CM, CP | Condicional ao modelo de receita | não verificado |
 | 10 | Diagnóstico ecológico | Levantamento florístico e fitossociológico, avaliação do potencial de regeneração natural (banco e chuva de sementes, rebrota, matrizes remanescentes, matriz de paisagem), identificação de fatores de degradação | Sim | Sim | Sim | CM | Alta; para ANR é o custo que determina a elegibilidade do método | não verificado |
@@ -83,11 +94,11 @@ terceirizável, caso em que o custo migra para o preço unitário de um insumo o
 | 15 | Regularização fundiária e comprovação dominial | Verificação e regularização de titularidade, sobreposições, servidão ambiental, anuências de terceiros, instrumentos de posse e uso da área | Sim | Sim | Sim | CM | Alta quando é condição precedente para contratar ou certificar | não verificado |
 | 16 | Acesso e infraestrutura de campo | Abertura e recuperação de estradas internas e carreadores, travessias e drenagem, barracão/apoio de campo, ponto de água | Sim | Sim | Sim | CM | Média; escala com distância e topografia, não com área | não verificado |
 | 17 | Isolamento da área | Cercamento, porteiras, mata-burros, retirada de gado, aceiros iniciais e estruturação da prevenção de incêndio | Sim | Sim | Sim | CM | Alta, e desproporcionalmente alta para ANR, onde é o núcleo da intervenção | não verificado |
-| 18 | Controle inicial de fatores de degradação | Controle de gramíneas exóticas competidoras, combate inicial a formigas cortadeiras, controle de espécies invasoras lenhosas; execução prévia ou concomitante à implantação | Sim | Sim | Sim | D | Alta; risco de sobreposição com itens já capturados em implantação | não verificado |
+| 18 | Controle inicial de fatores de degradação | Controle de gramíneas exóticas competidoras, combate inicial a formigas cortadeiras, controle de espécies invasoras lenhosas | Sim | Sim | Sim | D | Alta; risco de sobreposição com itens já capturados em implantação | não verificado |
 | 19 | Mobilização e logística inicial | Deslocamento de equipes e maquinário até a área, alojamento, transporte de insumos, montagem de canteiro de obra | Sim | Sim | Sim | CM | Média; escala com distância e com o número de frentes | não verificado |
-| 20 | Capacitação de equipes | Treinamento técnico em coleta, viveiro, semeadura, plantio e operação de máquinas; treinamentos de segurança do trabalho e certificações obrigatórias de operadores | Sim | Sim | Sim | CM, CP | Média; recorrente sob rotatividade, mas com componente inicial concentrado | não verificado |
+| 20 | Capacitação de equipes | Treinamento técnico em coleta, viveiro, semeadura, plantio e operação de máquinas; treinamentos de segurança do trabalho e certificações obrigatórias de operadores | Sim | Sim | Sim | CM, CP | Média; recorrente sob rotatividade, com componente inicial concentrado | não verificado |
 | 21 | Mobilização social e engajamento comunitário | Articulação com comunidades e proprietários vizinhos, reuniões de apresentação, acordos de uso, consulta livre, prévia e informada quando aplicável, comunicação e gestão de conflitos | Sim | Sim | Sim | CM | Média a alta; frequentemente omitido e condicionante do risco de execução | não verificado |
-| 22 | Estruturação do monitoramento | Definição do protocolo, inventário de linha de base, estoque inicial de carbono e de solo, instalação e marcação de parcelas permanentes, sistema de gestão de dados, equipamentos de campo | Sim | Sim | Sim | CM, CP | Média; separável entre componente inicial (Ano 0) e recorrente | não verificado |
+| 22 | Estruturação do monitoramento | Definição do protocolo, inventário de linha de base, estoque inicial de carbono e de solo, instalação e marcação de parcelas permanentes, sistema de gestão de dados, equipamentos de campo | Sim | Sim | Sim | CM, CP | Média; separável entre componente inicial e recorrente | não verificado |
 | 23 | Custos de transação jurídico-financeiros | Elaboração e negociação de contratos de execução, de aquisição de insumos e de comercialização de resultados; *due diligence* socioambiental e jurídica; estruturação financeira, garantias e custo de originação | Sim | Sim | Sim | CM, CP | Alta em projetos com financiamento externo ou venda de créditos | não verificado |
 | 24 | Seguros e reserva de contingência | Seguro contra fogo, seca e perda de plantio; provisão para replantio; constituição de reserva de risco (*buffer*) quando exigida por padrão de certificação | Sim | Sim | Sim | CM | Média; a reserva de *buffer* não é desembolso, mas reduz receita | não verificado |
 | 25 | Overhead de estruturação | Custo de gestão, coordenação técnica e administração incorrido antes do início operacional | Sim | Sim | Sim | CM, CP | Média; alto risco de dupla contagem com taxa de administração recorrente | não verificado |
@@ -98,402 +109,341 @@ Três assimetrias estruturam a comparação. Primeira: a cadeia de propágulos s
 *seedling* depende de viveiro e de capital de giro de produção, *seeding* depende de coleta,
 beneficiamento e armazenamento em volume, ANR depende de nenhum dos dois exceto quando há
 enriquecimento. Segunda: o diagnóstico de potencial de regeneração natural é um custo de Ano 0 cuja
-função é decidir se ANR é viável; ele antecede a escolha do método e não pertence a nenhuma aba
+função é decidir se ANR é viável; ele antecede a escolha do método e não pertence a nenhum método
 isoladamente. Terceira: isolamento da área e controle de fatores de degradação são custos comuns aos
-três métodos, mas seu peso relativo é máximo em ANR, onde constituem a própria intervenção, e menor
-em *seedling*, onde competem com custos de insumo e de operação.
+três métodos, mas seu peso relativo é máximo em ANR, onde constituem a própria intervenção.
 
 Os itens 8 a 15 e 19 a 25 são majoritariamente fixos por projeto: não escalam com a área nem com o
 método. Sua omissão subestima sistematicamente o custo de projetos pequenos e distorce a comparação
-entre métodos apenas de forma indireta, pela via da escala mínima viável de cada um.
+entre métodos pela via da escala mínima viável de cada um.
 
 ---
 
-## Etapa 3 — Abordagens de inserção dos custos de Ano 0
-
-### Premissa transversal: fluxo de caixa e alocação são problemas distintos
-
-Em uma análise custo-benefício com desconto, o valor presente depende de quando o recurso é
-efetivamente desembolsado. Redistribuir contabilmente um desembolso já ocorrido ao longo do horizonte
-não altera o custo econômico, mas altera o valor presente calculado, reduzindo-o artificialmente.
-Amortização, portanto, não é um instrumento para suavizar desembolso — é um instrumento para alocar
-um ativo cujo serviço é consumido por mais de um beneficiário, seja no tempo, seja entre métodos,
-seja entre projetos. Confundir os dois usos é a principal fonte de erro no tratamento de custos de
-Ano 0. As abordagens abaixo devem ser lidas sob essa distinção: as que operam sobre a fronteira do
-projeto (rateio, valor residual, preço-sombra) são legítimas; as que operam apenas sobre a
-distribuição temporal de um desembolso integralmente atribuível ao projeto não são, salvo quando
-refletem cronograma real de pagamento.
-
-### A. Custo integral no Ano 0
-
-Lançamento do valor total no período inicial.
-
-Adequada quando o ativo ou serviço é dedicado ao projeto, consumido integralmente dentro do horizonte
-e sem valor de revenda ao final: diagnóstico, projeto técnico, licenciamento, mobilização inicial,
-controle inicial de fatores de degradação, validação inicial de certificação. É também o tratamento
-correto para ativos compartilháveis quando a fronteira da análise é o programa inteiro, e não um
-projeto dentro dele.
-
-Distorção: quando aplicada a ativo compartilhável com vida útil superior ao horizonte ou a projetos
-paralelos, imputa a um único projeto o custo de uma capacidade que ele não consome sozinho,
-penalizando o método que depende desse ativo — na prática, penalizando *seedling* pelo viveiro e
-*seeding* pela estrutura de sementes. Também é sensível ao ano de referência: parte dos custos de
-Ano 0 ocorre em Ano −1 (produção de mudas, coleta na safra anterior, validação prévia), e tratá-los
-como Ano 0 subestima levemente o valor presente.
-
-Dados exigidos: valor total e ano de desembolso. É a abordagem menos exigente em dados.
-
-Comparabilidade: preserva comparabilidade apenas se todos os métodos forem avaliados sob a mesma
-fronteira de propriedade dos ativos.
-
-Riscos: subestimação por omissão de desembolsos de Ano −1; superestimação por internalizar capacidade
-ociosa.
-
-### B. Amortização ao longo do horizonte
-
-Distribuição do valor pelos anos do projeto, linearmente ou segundo a vida útil do ativo.
-
-O critério linear pelo horizonte é arbitrário: vincula a alocação à duração da análise, não ao ativo.
-Sob esse critério, alterar o horizonte de 20 para 30 anos muda o custo anual sem que nada de físico
-tenha mudado. O critério por vida útil é defensável, porque a fração alocada corresponde ao consumo
-do ativo, e é o único que permite tratar coerentemente ativos com vida inferior ao horizonte, que
-exigem reposição dentro dos 20 anos (sombrite, mangueiras e sistema de irrigação, telas, bombas,
-cercas), e ativos com vida superior, cujo excedente não pertence ao projeto.
-
-Adequada para: infraestrutura de viveiro, câmara fria e casa de sementes, equipamentos de campo e de
-monitoramento, cercamento.
-
-Distorção: se aplicada como diluição de desembolso, reduz o valor presente do custo sem contrapartida
-real. Só é legítima se acompanhada da representação do desembolso efetivo — isto é, se o objetivo for
-alocação entre usuários, e não redistribuição temporal do mesmo usuário.
-
-Dados exigidos: valor do ativo, vida útil por classe de ativo, ciclos de reposição dentro do
-horizonte, e uma definição explícita do que a alocação representa.
-
-Riscos: dupla contagem quando há reposição — o ativo é amortizado e a reposição também é lançada como
-custo cheio; subestimação quando a vida útil declarada é otimista.
-
-### C. Rateio por uso
-
-Alocação proporcional ao consumo da capacidade do ativo pelo projeto: fração da capacidade anual de
-produção de mudas efetivamente demandada, fração da capacidade de armazenamento de sementes ocupada,
-fração do tempo de uso de equipamento.
-
-É a abordagem conceitualmente mais correta para ativos de capacidade divisível, porque separa o custo
-da capacidade instalada do custo do serviço consumido. Resolve diretamente o problema do viveiro
-superdimensionado: o projeto absorve a fração que usa, e a ociosidade permanece com quem detém o
-ativo.
-
-Distorção: exige uma definição de capacidade que raramente é única. A capacidade de um viveiro varia
-com o número de ciclos anuais, com o tamanho do recipiente e com a espécie produzida; a mesma
-estrutura tem capacidades diferentes conforme o padrão de muda. Sem padronizar a unidade de
-capacidade, o rateio se torna manipulável.
-
-Comparabilidade: melhora a comparabilidade entre métodos, ao evitar que *seedling* carregue custo de
-capacidade não consumida. Mas exige que a mesma lógica seja aplicada à infraestrutura de sementes em
-*seeding*, sob pena de assimetria de tratamento.
-
-Dados exigidos: capacidade nominal anual do ativo e unidade em que é medida; volume demandado pelo
-projeto; número de ciclos por ano; horizonte de uso.
-
-Riscos: subestimação sistemática se a capacidade nominal for declarada acima da capacidade efetiva;
-dupla contagem se o rateio de capacidade coexistir com custo unitário de muda que já embuta
-depreciação.
-
-### D. Rateio por método
-
-Distribuição de custos comuns entre ANR, *seeding* e *seedling* conforme a dependência de cada um.
-
-Aplicável quando o projeto é um mosaico de métodos na mesma área, situação comum na prática, e quando
-a ferramenta pretende reportar custo por método além de custo total. Os critérios possíveis são
-distintos e produzem resultados distintos: rateio por área tratada, por participação no custo direto,
-por intensidade de uso do recurso comum, ou atribuição direta quando o custo é rastreável.
-
-Custos como diagnóstico, licenciamento, georreferenciamento, mobilização social e estruturação
-contratual não têm causalidade clara com nenhum método; para eles, o rateio por área é uma convenção,
-não uma medida. Custos como isolamento e controle de fatores de degradação têm causalidade parcial:
-são mais intensivos em ANR. Custos de cadeia de propágulos são atribuíveis diretamente.
-
-Distorção: rateio por área aplicado indistintamente transfere custo fixo para o método que ocupa mais
-área, o que tende a penalizar ANR, justamente o método aplicado em maior escala por depender de menor
-intensidade. Isso inverte a conclusão que a análise deveria produzir.
-
-Comparabilidade: é a abordagem que mais afeta a comparação entre métodos e, por isso, a que exige
-declaração explícita do critério. Recomenda-se reportar o custo comum de forma segregada, além de
-rateado, para que a comparação entre métodos possa ser feita sobre custos atribuíveis.
-
-Dados exigidos: fração de área por método; critério de rateio escolhido; identificação de quais custos
-são atribuíveis diretamente.
-
-Riscos: dupla contagem quando um custo é atribuído diretamente a um método e também entra na base de
-rateio comum.
-
-### E. CAPEX com valor residual
-
-Reconhecimento do valor remanescente do ativo ao final do horizonte, como entrada no último período.
-
-Adequada para ativos duráveis com vida útil superior a 20 anos e com valor de uso ou de revenda ao
-final: estrutura de viveiro, benfeitorias, câmara fria, acessos. Equivale economicamente ao rateio
-temporal, mas preserva o perfil real de desembolso: o custo integral aparece quando ocorre, e o valor
-não consumido retorna ao final, descontado.
-
-Distorção: o valor residual descontado a 20 anos é fortemente reduzido pela taxa de desconto, de modo
-que a abordagem se aproxima do custo integral em Ano 0 para taxas altas. Além disso, presume
-liquidez ou continuidade de uso que pode não existir — um viveiro construído para um projeto
-específico em local remoto pode ter valor residual próximo de zero, independentemente do estado
-físico.
-
-Dados exigidos: vida útil, critério de valoração residual (contábil, de mercado ou de uso
-continuado), e premissa explícita sobre continuidade de operação.
-
-Riscos: superestimação do valor residual quando se assume mercado secundário inexistente; dupla
-contagem se combinada com amortização.
-
-### F. Tratamento paramétrico
-
-Inserção como multiplicador ou fator de ajuste sobre custos já capturados, em vez de linha de custo
-autônoma — por exemplo, um percentual sobre custo direto para representar estruturação, licenciamento
-e transação.
-
-Adequada para custos difusos, de difícil especificação individual, ou quando a ferramenta precisa
-funcionar com poucos dados de entrada. Também é útil como valor padrão preenchido automaticamente,
-sobreponível por dado observado.
-
-Distorção: assume proporcionalidade entre o custo de Ano 0 e o custo direto, hipótese falsa
-justamente para a classe de custos onde a abordagem é mais tentadora. Certificação, licenciamento e
-diagnóstico são majoritariamente fixos por projeto: como fração do custo direto, decrescem com a
-área. Um multiplicador constante superestima esses custos em projetos grandes e os subestima em
-projetos pequenos, que é o erro na direção mais prejudicial, porque é no projeto pequeno que o custo
-fixo determina a viabilidade.
-
-Comparabilidade: um multiplicador aplicado sobre custo direto penaliza o método de maior custo
-direto — *seedling* — por custos que não dependem do método. Isso corrompe a comparação de forma não
-transparente, porque o efeito fica embutido no fator.
-
-Dados exigidos: nenhum além do custo direto, o que explica sua atratividade; a base empírica do fator,
-porém, exige amostra de projetos comparáveis.
-
-Riscos: dupla contagem quando o fator paramétrico coexiste com linhas explícitas dos mesmos custos;
-subestimação em pequena escala.
-
-### G. Preço-sombra por terceirização
-
-Substituição da modelagem do ativo pelo preço de mercado do serviço ou insumo equivalente: adotar o
-preço da muda entregue em vez de modelar viveiro, o preço da semente beneficiada em vez de modelar
-casa de sementes.
-
-Adequada quando existe mercado local com oferta suficiente e quando a decisão do projeto é
-efetivamente comprar em vez de produzir. É a abordagem que melhor reflete a estrutura real de custos
-da maioria dos projetos, que não constroem viveiro. Tem a vantagem de internalizar automaticamente
-depreciação, capital de giro e margem no preço unitário, eliminando a necessidade de rateio.
-
-Distorção: oculta a diferença entre produzir e comprar, que é precisamente uma das decisões que a
-análise pode querer informar. Também importa a margem do fornecedor para dentro do custo do projeto,
-o que é correto do ponto de vista do projeto e incorreto do ponto de vista social.
-
-Dados exigidos: preço unitário posto na área, disponibilidade e diversidade de espécies ofertadas,
-distância e frete.
-
-Riscos: dupla contagem grave se coexistir com CAPEX de viveiro; subestimação quando o mercado local
-não oferece a diversidade de espécies exigida e o projeto é obrigado a produzir.
-
-### H. Custo equivalente anual
-
-Conversão do investimento em um fluxo anual equivalente ao longo da vida útil do ativo, considerando
-o custo de capital.
-
-É a forma tecnicamente correta de comparar ativos com vidas úteis diferentes entre si e diferentes do
-horizonte, e resolve o problema que a amortização linear resolve mal. É particularmente útil quando a
-ferramenta pretende reportar custo anual por hectare como métrica de comparação entre métodos.
-
-Distorção: introduz dependência da taxa de desconto na alocação, o que exige que a taxa seja um
-parâmetro declarado e sujeito a análise de sensibilidade.
-
-Dados exigidos: valor do ativo, vida útil, taxa de desconto.
-
-Riscos: inconsistência se aplicado a alguns ativos e não a outros; dupla contagem se somado ao
-desembolso integral.
-
-### I. Ciclos de reposição dentro do horizonte
-
-Reconhecimento explícito de reinvestimentos para ativos cuja vida útil é inferior a 20 anos.
-
-Não é alternativa às demais abordagens, mas complemento necessário a qualquer uma delas. Sua omissão
-é uma fonte silenciosa de subestimação: cercas, aceiros, telas, sistemas de irrigação e equipamentos
-de campo não sobrevivem ao horizonte. Em ANR, onde o isolamento é a intervenção central, a omissão da
-reposição de cercamento subestima o custo do método mais barato, o que altera a conclusão da
-comparação na direção de reforçá-la indevidamente.
-
-Dados exigidos: vida útil por classe de ativo e política de reposição.
-
-### J. Custo de programa fora da fronteira do projeto
-
-Manutenção do ativo compartilhado fora da fronteira da análise, com entrada apenas da fração alocada
-via preço interno de transferência.
-
-Adequada quando a ferramenta avalia projetos individuais dentro de um programa que já detém
-infraestrutura. Torna explícito que a decisão sobre o ativo não pertence ao projeto avaliado.
-
-Distorção: se o preço interno for arbitrado abaixo do custo, transfere subsídio implícito e faz o
-projeto parecer viável às custas do programa.
-
-Dados exigidos: existência do ativo, preço interno de transferência e sua base.
-
-### K. Tratamento condicional e por cenário
-
-Reconhecimento de que parte dos custos de Ano 0 é contingente: certificação de carbono só se
-materializa se houver decisão de comercializar créditos; regularização fundiária só incide se houver
-pendência; capacitação varia com a existência de equipe prévia.
-
-Adequada para os custos das linhas 8, 9, 15 e 24 da Etapa 2. Trata-se de condicionar a inclusão a uma
-resposta do usuário, e não de estimar valor esperado ponderado por probabilidade, que introduziria
-custo em todos os projetos sem que ele ocorra em nenhum deles individualmente.
-
-Riscos: se implementado como valor esperado, produz um custo que não corresponde a nenhum projeto
-real.
+## Etapa 3 — Abordagens de inserção, sob o filtro do fluxo de caixa descontado
+
+### Premissa: o insumo da plataforma é fluxo de caixa, não competência
+
+Indicadores de valor presente e de taxa interna de retorno operam sobre o fluxo de caixa incremental
+do projeto: importam o montante e o momento em que o recurso sai ou entra do caixa. Isso separa as
+abordagens candidatas em duas classes de natureza distinta.
+
+A primeira classe opera sobre a **fronteira** da análise — define qual parcela do desembolso pertence
+ao projeto avaliado. Rateio por uso, rateio por método, valor residual, preço-sombra por
+terceirização e tratamento de programa pertencem a essa classe. Todas alteram o valor que entra no
+fluxo, e são legítimas em um modelo de fluxo descontado porque respondem à pergunta correta: quanto
+deste desembolso é atribuível ao projeto.
+
+A segunda classe opera sobre a **distribuição temporal** de um desembolso já integralmente atribuível
+ao projeto. Amortização e depreciação pertencem a essa classe. Não são fluxo de caixa: redistribuir
+contabilmente um desembolso já ocorrido reduz o valor presente do custo sem que nada de real tenha
+mudado, elevando artificialmente o VPL e a TIR. **A única via legítima pela qual a depreciação afeta
+o fluxo de caixa é o escudo fiscal**, quando o modelo incorpora tributação sobre resultado: nesse
+caso a depreciação reduz a base tributável, e a economia de imposto é um efeito de caixa real. Fora
+desse caso, amortização não deve entrar no fluxo.
+
+Uma terceira observação separa entrada de saída: o custo equivalente anual não é um tratamento de
+insumo, e sim uma métrica derivada do valor presente. Pertence ao conjunto de indicadores de
+resultado, ao lado de VPL e TIR, não ao conjunto de regras de lançamento.
+
+### Classificação das abordagens quanto à admissibilidade no modelo
+
+| Abordagem | Classe | Admissível como lançamento no fluxo | Observação |
+|---|---|---|---|
+| A. Custo integral no ano de incidência | Fluxo | Sim | Caso base; exige apenas valor e ano |
+| B. Amortização contábil | Competência | Não, salvo escudo fiscal | Só entra como efeito tributário, se houver tributação modelada |
+| C. Rateio por uso da capacidade | Fronteira | Sim | Reduz o valor lançado; não altera o momento |
+| D. Rateio por método | Fronteira | Sim | Necessário apenas se o resultado for reportado por método |
+| E. CAPEX com valor residual | Fluxo | Sim | Desembolso integral no ano de incidência, entrada terminal no ano final |
+| F. Fator paramétrico | Estimador de valor | Sim, com alocação explícita a um ano | É método de estimativa, não de distribuição temporal |
+| G. Preço-sombra por terceirização | Fronteira | Sim | Substitui a modelagem do ativo pelo preço do serviço |
+| H. Custo equivalente anual | Métrica de saída | Não | Derivado do valor presente, não insumo |
+| I. Ciclos de reposição | Fluxo | Sim | Lançamentos negativos intercalados no horizonte |
+| J. Programa fora da fronteira | Fronteira | Sim | Entra apenas a fração alocada, via preço interno de transferência |
+| K. Tratamento condicional | Gatilho | Sim | Inclui ou suprime a linha conforme atributo do projeto |
+
+### Discussão por abordagem
+
+**A. Custo integral no ano de incidência.** Adequada para ativo ou serviço dedicado, consumido dentro
+do horizonte, sem valor de revenda: diagnóstico, projeto técnico, licenciamento, mobilização,
+controle inicial de degradação, validação inicial de certificação. É também o tratamento correto para
+ativos compartilháveis quando a fronteira da análise é o programa inteiro. Distorce quando aplicada a
+ativo compartilhável com vida superior ao horizonte ou usado por projetos paralelos: imputa a um
+projeto a capacidade que ele não consome sozinho, penalizando *seedling* pelo viveiro e *seeding*
+pela estrutura de sementes. O ponto de atenção é o ano de referência: parte dos custos de Ano 0 ocorre
+no período anterior à implantação — produção de mudas, coleta na safra precedente, validação prévia,
+estruturação contratual —, e comprimi-los todos no período inicial subestima o valor presente do
+custo.
+
+**B. Amortização.** O critério linear pelo horizonte é duplamente problemático: além de não ser fluxo
+de caixa, vincula a alocação à duração da análise e não ao ativo, de modo que alterar o horizonte
+mudaria o custo anual sem que nada físico mudasse. O critério por vida útil é conceitualmente melhor,
+mas sua função correta em um modelo de fluxo é outra: determinar quando há reposição dentro do
+horizonte (abordagem I) e quanto sobra ao final (abordagem E). Ou seja, a vida útil é um dado
+necessário, mas seu uso não é amortizar — é temporizar reposições e calcular residual.
+
+**C. Rateio por uso.** Conceitualmente a mais correta para ativos de capacidade divisível: separa o
+custo da capacidade instalada do custo do serviço consumido, e resolve o viveiro superdimensionado,
+deixando a ociosidade com quem detém o ativo. Exige uma definição de capacidade que raramente é
+única — a capacidade de um viveiro varia com número de ciclos anuais, tamanho de recipiente e
+espécie produzida. Sem padronizar a unidade de capacidade, a fração alocada se torna manipulável e o
+VPL, não auditável. Melhora a comparabilidade entre métodos, desde que a mesma lógica se aplique à
+infraestrutura de sementes em *seeding*, sob pena de assimetria de tratamento.
+
+**D. Rateio por método.** Necessário quando o projeto é um mosaico de métodos e a plataforma reporta
+resultado por método. Os critérios possíveis — área tratada, participação no custo direto,
+intensidade de uso do recurso comum, atribuição direta — produzem resultados distintos. Diagnóstico,
+licenciamento, georreferenciamento, engajamento e estruturação contratual não têm causalidade clara
+com nenhum método; para eles, rateio por área é convenção, não medida. Isolamento e controle de
+degradação têm causalidade parcial, mais intensiva em ANR. Cadeia de propágulos é atribuível
+diretamente. O risco específico: rateio por área aplicado indistintamente transfere custo fixo para o
+método que ocupa mais área, penalizando ANR — justamente o método aplicado em maior escala por exigir
+menor intensidade —, o que inverte a conclusão que a análise deveria produzir. Recomenda-se que a
+plataforma reporte o custo comum de forma segregada, além de rateado, e que a TIR por método seja
+calculada apenas sobre fluxos atribuíveis, com o custo comum tratado em nível de projeto.
+
+**E. CAPEX com valor residual.** Para ativos duráveis com vida superior ao horizonte e com valor de
+uso ou revenda ao final. Preserva o perfil real de desembolso e reconhece o não consumido como
+entrada terminal. Sob desconto a 20 anos, o residual tem peso reduzido, de modo que a abordagem se
+aproxima de A quanto maior a taxa; ainda assim, seu efeito sobre a TIR não é desprezível, porque um
+fluxo positivo terminal altera o padrão de sinais. Presume liquidez ou continuidade de uso que pode
+não existir: um viveiro construído para um projeto específico em local remoto pode ter residual
+próximo de zero independentemente do estado físico. Combinar E com B é dupla contagem.
+
+**F. Fator paramétrico.** Multiplicador sobre custo direto para custos difusos. Como estimador de
+valor é aceitável; o problema é a hipótese de proporcionalidade, falsa justamente onde a abordagem é
+mais tentadora — certificação, licenciamento e diagnóstico são fixos por projeto e decrescem como
+fração do custo direto conforme a área cresce. Um fator constante superestima projetos grandes e
+subestima pequenos, que é o erro na direção mais prejudicial, porque é no projeto pequeno que o custo
+fixo determina a viabilidade. Aplicado sobre custo direto, penaliza *seedling* por custos que não
+dependem do método, e o efeito fica embutido no fator, sem transparência para quem lê o VPL.
+
+**G. Preço-sombra por terceirização.** Adotar o preço da muda entregue em vez de modelar viveiro, o
+preço da semente beneficiada em vez de modelar casa de sementes. Reflete a estrutura real da maioria
+dos projetos e internaliza depreciação, capital de giro e margem no preço unitário, dispensando
+rateio. Oculta a diferença entre produzir e comprar, que pode ser a decisão que a análise quer
+informar, e importa a margem do fornecedor — correto na perspectiva financeira do projeto, incorreto
+na perspectiva econômica ou social, distinção que importa se a plataforma pretende reportar VPL sob
+ambas as óticas. Dupla contagem grave se coexistir com CAPEX de viveiro.
+
+**I. Ciclos de reposição.** Complemento necessário a qualquer abordagem, não alternativa. Cercas,
+aceiros, telas, sistemas de irrigação e equipamentos de campo não sobrevivem a 20 anos. Em ANR, onde
+o isolamento é a intervenção central, omitir a reposição de cercamento subestima o custo do método
+mais barato, reforçando indevidamente a conclusão da comparação. Há um efeito específico sobre a TIR
+discutido adiante: reposições introduzem fluxos negativos intercalados.
+
+**J. Programa fora da fronteira.** Manter o ativo compartilhado fora da fronteira, com entrada apenas
+da fração alocada via preço interno de transferência. Adequada quando a plataforma avalia projetos
+dentro de um programa que já detém infraestrutura, e torna explícito que a decisão sobre o ativo não
+pertence ao projeto avaliado. Se o preço interno for arbitrado abaixo do custo, transfere subsídio
+implícito e produz VPL positivo às custas do programa.
+
+**K. Tratamento condicional.** Parte dos custos de Ano 0 é contingente: certificação só se materializa
+sob decisão de comercializar créditos; regularização fundiária só sob pendência dominial; capacitação
+varia com a existência de equipe prévia. O tratamento correto é condicionar a inclusão da linha a um
+atributo declarado do projeto, e não estimar valor esperado ponderado por probabilidade — este último
+produziria um custo que não corresponde a nenhum projeto real e contaminaria o VPL de todos os
+cenários. Probabilidade é instrumento de análise de risco sobre o resultado, não de composição do
+fluxo determinístico.
+
+### Efeitos específicos sobre cada indicador
+
+**Valor presente líquido.** O período inicial não é descontado, de modo que cada unidade monetária de
+Ano 0 entra no VPL com o peso máximo possível. Isso torna as linhas de Ano 0 as de maior alavancagem
+sobre o resultado por unidade de valor, e as primeiras candidatas à análise de sensibilidade. A
+consequência prática é que erros de escopo no Ano 0 — omissão ou dupla contagem — deslocam o VPL mais
+do que erros de igual magnitude em qualquer ano posterior.
+
+**Taxa interna de retorno.** O custo de Ano 0 define a magnitude do desembolso inicial e, portanto, é
+o principal determinante da TIR. Dois cuidados são específicos: reposições (I) e verificações
+periódicas de certificação introduzem fluxos negativos intercalados entre fluxos positivos; quando o
+sinal do fluxo líquido muda mais de uma vez ao longo dos 20 anos, a TIR pode ser múltipla ou
+inexistente, e perde interpretação como critério de decisão. Nesses casos a plataforma precisa
+detectar a mudança de sinal e reportar taxa interna de retorno modificada, ou restringir a decisão ao
+VPL. O segundo cuidado: em configurações sem receita monetizada — restauração por obrigação legal,
+sem venda de créditos nem produto —, o fluxo é integralmente negativo e a TIR não existe. A
+comparação entre métodos deve então se dar por valor presente dos custos, custo equivalente anual e
+indicadores de custo-efetividade, e não por TIR.
+
+**Razão benefício-custo.** Classificar uma linha de Ano 0 como custo no denominador ou como redução
+de benefício no numerador altera a razão sem alterar o VPL. A reserva de risco exigida por padrões de
+certificação é o caso mais claro: não é desembolso, é retenção de crédito, e seu lugar natural é
+como redução de receita. Sem uma regra fixa de classificação, a razão benefício-custo deixa de ser
+comparável entre projetos e entre métodos, mesmo com VPL correto.
+
+**Prazo de retorno.** Custos de Ano 0 deslocam a data de recuperação, e o efeito é desproporcional
+para *seedling*, cujo desembolso inicial é maior. O prazo descontado deve ser preferido ao simples,
+sob pena de premiar métodos com desembolso concentrado no início.
+
+**Capital de giro.** A convenção clássica é que o capital de giro imobilizado é recuperado ao final
+do horizonte, como entrada terminal. Aplicada à produção de mudas, a convenção só faz sentido se
+houver estrutura continuada de produção; em projeto único, o capital de giro é consumido e não
+retorna. A escolha precisa ser declarada, porque afeta VPL e TIR na mesma direção do valor residual.
+
+**Consistência de preços e taxa.** Custos de Ano 0 tendem a ser levantados em preços correntes, e
+receitas de longo prazo — crédito de carbono, madeira — costumam ser projetadas em séries nominais.
+Misturar as duas bases dentro do mesmo fluxo produz erro sistemático que nenhuma escolha de alocação
+corrige. A plataforma precisa declarar se opera em termos reais ou nominais e aplicar a taxa de
+desconto correspondente.
+
+**Custos afundados.** Diagnóstico, projeto técnico e estruturação frequentemente já foram incorridos
+quando a análise é feita. Para uma decisão marginal — prosseguir ou não —, não são incrementais e não
+deveriam entrar. Para uma avaliação ex-ante do projeto completo, entram. A plataforma precisa
+distinguir os dois usos, porque a mesma linha de custo muda de status conforme a pergunta.
 
 ---
 
 ## Etapa 4 — Recomendação por categoria
 
-| # | Custo de Ano 0 | Abordagem recomendada | Justificativa técnica | Dados necessários |
-|---|---|---|---|---|
-| 1 | Infraestrutura física de viveiro | G como padrão; C combinada com E quando produção própria | A maioria dos projetos compra mudas, e o preço internaliza a estrutura; quando há viveiro próprio, o projeto consome fração da capacidade e o ativo sobrevive ao horizonte | Regime de suprimento (próprio/terceirizado/compartilhado); valor do investimento; capacidade nominal anual e unidade; volume demandado; vida útil; premissa de valor residual |
-| 2 | Sistemas e equipamentos de viveiro | C combinada com I | Vida útil inferior à da estrutura civil, com reposição dentro do horizonte | Valor por classe de equipamento; vida útil; ciclos de reposição; fração de uso |
-| 3 | Capital de giro da produção de mudas | A, com desembolso alocado ao ano anterior ao plantio | É consumo, não ativo; a defasagem entre produção e plantio é real e afeta o valor presente | Ciclo de produção em meses; mortalidade e taxa de descarte em viveiro; custo unitário de produção; ano de desembolso |
-| 4 | Coleta de sementes | A quando dedicada; C quando há estrutura de coleta compartilhada; G quando há compra de sementes | Custo majoritariamente operacional e atribuível ao lote; a estrutura de apoio é que é compartilhável | Origem das sementes (coleta própria/compra/rede de coletores); volume por espécie; número de expedições; distância |
-| 5 | Beneficiamento e armazenamento | C combinada com E para os ativos; A para a operação | Câmara fria e casa de sementes são capacidade divisível e durável; a operação é consumo do lote | Valor dos ativos; capacidade de armazenamento e ocupação pelo projeto; vida útil; custo operacional por lote |
-| 6 | Análise de qualidade de sementes | A, por lote | Custo recorrente por lote, atribuível diretamente, sem componente de ativo relevante | Número de lotes e de espécies; custo por análise |
-| 7 | Registro e certificação de sementes e mudas | A, com rateio D por área quando o projeto é misto | Custo fixo por produtor e por período, sem relação com o volume do projeto individual | Obrigatoriedade aplicável; periodicidade de renovação; base de rateio |
-| 8 | Certificação ambiental e de carbono | K para inclusão; A para o componente inicial; separar o componente recorrente de verificação | Custo fixo por projeto, condicional à decisão de comercializar créditos, com componente inicial distinto do recorrente | Decisão de comercialização; padrão adotado; escopo e área; periodicidade de verificação; custo de validação inicial e de registro |
-| 9 | Certificação de manejo e cadeia de custódia | K para inclusão; A para auditoria inicial | Condicional ao modelo de receita; não incide na maioria dos projetos de restauração pura | Existência de componente madeireiro; padrão; escopo |
-| 10 | Diagnóstico ecológico | A, com rateio D declarado | Custo antecedente à escolha do método; atribuí-lo a um método individual induz erro de comparação | Área diagnosticada; número de unidades amostrais; fração de área por método |
-| 11 | Diagnóstico físico do meio | A, com rateio D declarado | Mesma natureza do item 10 | Número de amostras de solo; área; profundidades |
-| 12 | Projeto técnico de restauração | A, com rateio D declarado | Custo fixo por projeto, com componente que escala fracamente com a área | Área; número de unidades de manejo; regime de contratação do responsável técnico |
-| 13 | Georreferenciamento e demarcação | A no Ano 0, com reconhecimento de reaquisição periódica de imagens sob I | O levantamento inicial é único; imagens e sobrevoos de acompanhamento são recorrentes e pertencem ao monitoramento | Área; método de levantamento; frequência de reaquisição |
-| 14 | Licenciamento e conformidade | A, condicional K por autorização específica | Fixo por projeto, com itens condicionais à situação regulatória da área | Situação regulatória; autorizações aplicáveis; taxas e emolumentos; existência de outorga de água |
-| 15 | Regularização fundiária | K para inclusão; A quando incide | Não incide em áreas regulares; quando incide, é condição precedente e custo concentrado | Situação dominial; existência de pendências; instrumento de uso da área |
-| 16 | Acesso e infraestrutura de campo | A para abertura; I para manutenção e reposição | O investimento inicial é único; a conservação é recorrente e frequentemente omitida | Extensão de acessos; condição inicial; distância à via principal; regime de conservação |
-| 17 | Isolamento da área | A para implantação; I obrigatoriamente para reposição | Vida útil de cercas e aceiros é inferior ao horizonte; omitir a reposição subestima ANR de forma assimétrica | Perímetro; tipo de cerca; vida útil; necessidade de aceiro e sua extensão; pressão externa (gado, fogo) |
-| 18 | Controle inicial de fatores de degradação | A, com verificação explícita de fronteira contra itens de implantação | Custo real de Ano 0, mas com alta sobreposição com preparo de área já capturado | Nível de infestação; número de operações; método de controle; declaração de o que já está incluído em implantação |
-| 19 | Mobilização e logística inicial | A | Desembolso único, escalando com distância e número de frentes, não com área | Distância à base; número de frentes; necessidade de alojamento |
-| 20 | Capacitação de equipes | A para o componente inicial; I para reciclagem | Componente inicial concentrado, com necessidade de reciclagem sob rotatividade | Tamanho da equipe; treinamentos obrigatórios; rotatividade esperada |
-| 21 | Mobilização social e engajamento | A, com rateio D por área e componente recorrente segregado | Custo fixo por projeto e por contexto social, sem relação com o método | Número de partes interessadas; existência de território tradicional; exigência de consulta; número de eventos |
-| 22 | Estruturação do monitoramento | A para linha de base e instalação de parcelas; C ou G para equipamentos; separar o recorrente | Linha de base é única e irreproduzível; equipamentos são compartilháveis; medições posteriores são recorrentes e não pertencem ao Ano 0 | Número de parcelas; protocolo adotado; equipamentos e sua vida útil; frequência de medição |
-| 23 | Custos de transação | A, condicional K à existência de financiamento externo ou venda de créditos | Concentrado no Ano 0 e ausente em projetos autofinanciados; não é proporcional ao custo direto | Existência de financiamento externo; número e complexidade de contratos; exigência de *due diligence* |
-| 24 | Seguros e contingência | I para o prêmio recorrente; tratamento como redução de receita para reserva de *buffer* | Prêmio é fluxo anual, não custo de Ano 0; a reserva de crédito não é desembolso e não deve entrar como custo | Contratação de seguro; percentual de reserva exigido pelo padrão; base de incidência |
-| 25 | Overhead de estruturação | F como último recurso, com declaração explícita de que substitui itens 12, 14 e 23 | É a única categoria em que o tratamento paramétrico se justifica, e apenas quando os itens específicos não são coletados | Percentual adotado; base de incidência; lista dos itens que o fator substitui |
+A coluna de lançamento indica como a linha entra no fluxo de caixa da plataforma. `t0` designa o
+período inicial; `t−1` designa desembolso anterior à implantação; `tn` designa o ano final do
+horizonte; `recorrente` indica lançamento em anos subsequentes segundo periodicidade própria.
 
-### Regras de consistência a aplicar sobre a matriz
+| # | Custo | Abordagem | Lançamento no fluxo | Justificativa | Dados necessários |
+|---|---|---|---|---|---|
+| 1 | Infraestrutura de viveiro | G padrão; C+E se produção própria | G: embutido no preço unitário. C+E: saída em `t0` pela fração alocada, entrada residual em `tn` | A maioria dos projetos compra mudas e o preço internaliza a estrutura; com viveiro próprio o projeto consome fração da capacidade e o ativo sobrevive ao horizonte | Regime de suprimento; valor investido; capacidade nominal anual e unidade; volume demandado; vida útil; critério de residual |
+| 2 | Equipamentos de viveiro | C+I | Saída em `t0` pela fração alocada; saídas de reposição nos anos de fim de vida útil | Vida útil inferior à da estrutura civil, com reposição dentro do horizonte | Valor por classe; vida útil; ciclos de reposição; fração de uso |
+| 3 | Capital de giro da produção de mudas | A, com convenção declarada de recuperação | Saída em `t−1`; entrada em `tn` apenas se houver estrutura continuada | É consumo, não ativo; a defasagem entre produção e plantio afeta o valor presente | Ciclo de produção em meses; mortalidade e descarte; custo unitário; decisão sobre recuperação do giro |
+| 4 | Coleta de sementes | A se dedicada; C se estrutura compartilhada; G se compra | Saída em `t−1` ou `t0` conforme a safra; recorrente se houver replantio | Custo operacional atribuível ao lote; a estrutura de apoio é que é compartilhável | Origem das sementes; volume por espécie; nº de expedições; distância |
+| 5 | Beneficiamento e armazenamento | C+E para ativos; A para operação | Ativos: saída em `t0` pela fração alocada, residual em `tn`. Operação: saída no ano do lote | Câmara fria e casa de sementes são capacidade divisível e durável; a operação é consumo do lote | Valor dos ativos; capacidade e ocupação; vida útil; custo operacional por lote |
+| 6 | Análise de qualidade de sementes | A, por lote | Saída no ano do lote | Recorrente por lote, atribuível, sem componente de ativo relevante | Nº de lotes e espécies; custo por análise |
+| 7 | Registro de sementes e mudas | A, com rateio D se projeto misto | Saída em `t0` e nos anos de renovação | Fixo por produtor e por período, sem relação com o volume do projeto | Obrigatoriedade aplicável; periodicidade de renovação; base de rateio |
+| 8 | Certificação ambiental e de carbono | K para inclusão; A para o componente inicial | Saída em `t0` para validação e registro; saídas recorrentes nos anos de verificação | Fixo por projeto, condicional à comercialização, com componente inicial distinto do recorrente — a separação evita que a verificação periódica seja tratada como custo de Ano 0 | Decisão de comercialização; padrão; escopo e área; periodicidade de verificação; custo de validação e de registro |
+| 9 | Certificação de manejo | K para inclusão; A para auditoria inicial | Saída em `t0`; recorrente conforme ciclo de auditoria | Condicional ao modelo de receita; não incide em restauração sem componente comercial | Existência de componente madeireiro; padrão; escopo |
+| 10 | Diagnóstico ecológico | A, com rateio D declarado, e status de afundado declarado | Saída em `t−1` ou `t0` | Antecede a escolha do método; atribuí-lo a um método induz erro de comparação; é o candidato mais frequente a custo afundado | Área diagnosticada; unidades amostrais; fração de área por método; se já incorrido |
+| 11 | Diagnóstico físico do meio | A, com rateio D declarado | Saída em `t−1` ou `t0` | Mesma natureza do item 10 | Nº de amostras de solo; área; profundidades |
+| 12 | Projeto técnico de restauração | A, com rateio D declarado | Saída em `t−1` ou `t0` | Fixo por projeto, escala fracamente com a área | Área; unidades de manejo; regime de contratação do responsável técnico |
+| 13 | Georreferenciamento e demarcação | A no `t0`; reaquisição sob I | Saída em `t0`; saídas nos anos de reaquisição de imagens | O levantamento inicial é único; sobrevoos de acompanhamento pertencem ao monitoramento e não ao Ano 0 | Área; método de levantamento; frequência de reaquisição |
+| 14 | Licenciamento e conformidade | A, com K por autorização específica | Saída em `t0`; recorrente nos anos de renovação de licença ou outorga | Fixo por projeto, com itens condicionais à situação regulatória da área | Situação regulatória; autorizações aplicáveis; taxas; outorga de água; validade das licenças |
+| 15 | Regularização fundiária | K para inclusão; A quando incide | Saída em `t−1` ou `t0` | Não incide em áreas regulares; quando incide, é condição precedente e custo concentrado | Situação dominial; pendências; instrumento de uso da área |
+| 16 | Acesso e infraestrutura de campo | A para abertura; I para conservação | Saída em `t0`; saídas recorrentes de conservação | Investimento inicial único; conservação recorrente e frequentemente omitida | Extensão de acessos; condição inicial; distância; regime de conservação |
+| 17 | Isolamento da área | A para implantação; I obrigatório para reposição | Saída em `t0`; saídas nos anos de fim de vida útil da cerca; manutenção de aceiro recorrente | Vida útil de cercas e aceiros é inferior ao horizonte; omitir a reposição subestima ANR de forma assimétrica e distorce a comparação entre métodos | Perímetro; tipo de cerca; vida útil; extensão de aceiro; pressão externa |
+| 18 | Controle inicial de degradação | A, com verificação de fronteira contra implantação | Saída em `t0`, eventualmente repartida entre `t0` e `t1` | Custo real de Ano 0, com alta sobreposição com preparo de área já capturado em implantação | Nível de infestação; nº de operações; método; declaração do que já está em implantação |
+| 19 | Mobilização e logística inicial | A | Saída em `t0` | Desembolso único, escala com distância e número de frentes, não com área | Distância à base; frentes; alojamento |
+| 20 | Capacitação de equipes | A para o inicial; I para reciclagem | Saída em `t0`; saídas recorrentes de reciclagem | Componente inicial concentrado, com necessidade de reciclagem sob rotatividade | Tamanho da equipe; treinamentos obrigatórios; rotatividade esperada |
+| 21 | Mobilização social e engajamento | A, com rateio D e componente recorrente segregado | Saída em `t−1`/`t0`; saídas recorrentes de relacionamento | Fixo por projeto e por contexto social, sem relação com o método | Partes interessadas; território tradicional; exigência de consulta; nº de eventos |
+| 22 | Estruturação do monitoramento | A para linha de base e parcelas; C ou G para equipamentos; recorrente segregado | Saída em `t0` para linha de base e instalação; equipamentos pela fração alocada com reposição; medições recorrentes | A linha de base é única e irreproduzível; equipamentos são compartilháveis; medições posteriores não são custo de Ano 0 | Nº de parcelas; protocolo; equipamentos e vida útil; frequência de medição |
+| 23 | Custos de transação | A, com K para financiamento externo | Saída em `t−1` ou `t0`; custo de originação eventualmente vinculado ao desembolso do financiamento | Concentrado no início, ausente em projetos autofinanciados, e não proporcional ao custo direto | Existência de financiamento externo; nº e complexidade de contratos; *due diligence*; estrutura de garantias |
+| 24 | Seguros e contingência | I para o prêmio; reserva de *buffer* como redução de receita | Prêmio: saída recorrente. Reserva: dedução do fluxo de receita, não linha de custo | O prêmio é fluxo anual e não pertence ao Ano 0; a reserva não é desembolso e lançá-la como custo distorce a razão benefício-custo | Contratação de seguro; percentual de reserva do padrão; base de incidência |
+| 25 | Overhead de estruturação | F como último recurso, declarando o que substitui | Saída em `t0`, valor derivado de fator sobre custo direto | Única categoria em que o tratamento paramétrico se justifica, e apenas quando os itens específicos não são coletados | Percentual adotado; base de incidência; lista dos itens substituídos |
 
-Três regras evitam os erros mais prováveis. Primeira, exclusividade entre G e as abordagens de ativo:
-se o regime de suprimento é terceirizado, os blocos de CAPEX de viveiro e de estrutura de sementes
-devem ser suprimidos, não zerados pelo usuário. Segunda, exclusividade entre F e as linhas
-específicas que o fator representa. Terceira, separação obrigatória entre componente inicial e
-componente recorrente nas categorias 8, 13, 16, 17, 20, 21 e 22, porque em todas elas existe um custo
-de Ano 0 e um custo anual de mesma natureza, e a ausência dessa separação produz simultaneamente
-dupla contagem no Ano 0 e subestimação nos anos seguintes.
+### Regras de consistência
+
+Cinco regras evitam os erros mais prováveis na plataforma.
+
+Primeira, exclusividade entre G e as abordagens de ativo: sob suprimento terceirizado, os blocos de
+CAPEX de viveiro e de estrutura de sementes devem ser suprimidos do fluxo, não zerados manualmente.
+
+Segunda, exclusividade entre F e as linhas específicas que o fator representa.
+
+Terceira, separação obrigatória entre componente inicial e recorrente nas categorias 8, 13, 16, 17,
+20, 21 e 22. Em todas há um custo de Ano 0 e um custo anual de mesma natureza; a ausência dessa
+separação produz simultaneamente dupla contagem em `t0` e subestimação nos anos seguintes, com efeito
+oposto sobre VPL e TIR que pode se cancelar parcialmente e mascarar o erro.
+
+Quarta, exclusividade entre B e as abordagens E e I: um ativo não pode ser amortizado, reposto e ter
+residual reconhecido ao mesmo tempo.
+
+Quinta, verificação de sinais do fluxo líquido antes de reportar TIR, com bloqueio ou qualificação do
+indicador quando houver mais de uma inversão.
 
 ---
 
-## Etapa 5 — Implicações para o questionário
+## Etapa 5 — Incorporação das linhas de custo na plataforma de análise custo-benefício
 
-### Estrutura proposta
+### Esquema de atributos da linha de custo
 
-A organização por método não comporta bem a maior parte dos custos de Ano 0, porque a maioria deles é
-fixa por projeto e independe do método. Propõe-se uma estrutura em três níveis:
+A recomendação central é que cada custo de Ano 0 entre na plataforma como uma linha com atributos
+explícitos, e não como um valor agregado. São os atributos, e não o valor, que permitem à plataforma
+derivar o lançamento correto no fluxo, aplicar as regras de consistência e sustentar sensibilidade.
 
-1. **Seção transversal de projeto (nova, anterior às abas):** escala, contexto e regime institucional.
-   Área total, fração de área por método, distância à base logística, situação dominial e regulatória,
-   existência de financiamento externo, decisão de comercializar créditos, existência de equipe
-   própria, contexto social. Esses campos condicionam a exibição de blocos posteriores.
-2. **Seção transversal de Ano 0 (nova):** os custos comuns aos três métodos — diagnóstico,
-   planejamento, licenciamento, georreferenciamento, acesso, isolamento, mobilização, capacitação,
-   engajamento, monitoramento inicial, certificação, transação.
-3. **Blocos de Ano 0 dentro de cada aba:** apenas os custos específicos do método — cadeia de
-   propágulos em *seeding* e *seedling*, controle inicial de fatores de degradação com intensidade
-   específica por método, enriquecimento em ANR.
+| Atributo | Conteúdo | Função no modelo |
+|---|---|---|
+| Identificador e categoria | Código estável e categoria da Etapa 2 | Rastreabilidade e agregação |
+| Natureza econômica | CAPEX, OPEX, capital de giro, encargo regulatório, custo de transação, item não-caixa | Determina o tratamento: residual, recuperação, dedutibilidade |
+| Período de incidência | Ano relativo ao início da implantação, admitindo valores negativos | Posiciona o lançamento no fluxo; sem isso, todo Ano 0 colapsa em `t0` |
+| Periodicidade | Único, recorrente anual, recorrente por ciclo, por evento | Gera os lançamentos subsequentes |
+| Base de escala | Fixo por projeto, por hectare, por perímetro, por muda, por lote, por distância | Define o que multiplica o valor e como o custo se comporta com o tamanho do projeto |
+| Método aplicável | ANR, *seeding*, *seedling*, comum | Habilita o rateio por método e o reporte de custo atribuível |
+| Regime de compartilhamento | Dedicado, compartilhado entre métodos, compartilhado entre projetos, terceirizado | Seleciona a abordagem de fronteira |
+| Fração alocada e critério | Valor e base do rateio | Torna auditável a parcela lançada |
+| Vida útil | Anos | Gera reposições e residual; não gera amortização |
+| Política de reposição | Reposição integral, parcial, ou não reposição | Define os lançamentos negativos intercalados |
+| Valor residual e critério | Valor e base (contábil, mercado, uso continuado, zero) | Entrada terminal |
+| Condição de existência | Atributo do projeto que aciona a linha | Implementa o tratamento condicional |
+| Tratamento fiscal | Depreciável, dedutível, não dedutível | Único canal legítimo da depreciação para o fluxo |
+| Marcador de fronteira | Referência às linhas com sobreposição conhecida | Prevenção de dupla contagem |
+| Status de incremento | Incremental ou afundado | Permite alternar entre avaliação ex-ante e decisão marginal |
+| Origem e confiabilidade do valor | Cotação, referência de mercado, estimativa paramétrica, valor histórico | Base para faixas de sensibilidade |
 
-Essa separação é também o que viabiliza reportar, além do custo total, o custo atribuível por método,
-que é a base correta para a comparação entre métodos.
+### Agrupamento das linhas na plataforma
 
-### Campos a criar
+A separação recomendada não é por método, porque a maior parte dos custos de Ano 0 é fixa por projeto.
+Três blocos de lançamento, agregados no mesmo fluxo mas rastreáveis separadamente:
 
-| Bloco | Campo | Natureza | Função na análise |
-|---|---|---|---|
-| Projeto | Área total e fração por método | Escala | Base de rateio e denominador das métricas por hectare |
-| Projeto | Horizonte e taxa de desconto | Parâmetro | Condição para custo equivalente anual e valor residual |
-| Projeto | Distância à base logística | Escala | Modula mobilização, acesso e frete |
-| Projeto | Situação dominial | Condicional | Habilita bloco de regularização fundiária |
-| Projeto | Situação regulatória e autorizações aplicáveis | Condicional | Habilita itens de licenciamento |
-| Projeto | Comercialização de créditos (sim/não) e padrão | Condicional | Habilita bloco de certificação e de reserva |
-| Projeto | Financiamento externo (sim/não) | Condicional | Habilita bloco de custos de transação |
-| Projeto | Contexto social e exigência de consulta | Condicional | Habilita bloco de engajamento |
-| Ano 0 transversal | Diagnóstico: número de unidades amostrais e amostras de solo | Escala | Custo do diagnóstico |
-| Ano 0 transversal | Perímetro a isolar e tipo de cerca | Escala | Custo de cercamento; base para reposição |
-| Ano 0 transversal | Extensão de aceiros e de acessos a abrir | Escala | Custo de infraestrutura de campo |
-| Ano 0 transversal | Número de parcelas permanentes e protocolo | Escala | Custo de linha de base e de monitoramento |
-| Ano 0 transversal | Vida útil por classe de ativo | Parâmetro | Habilita reposição e valor residual |
-| Ano 0 transversal | Custos já incluídos em outro item (lista de verificação) | Controle | Prevenção de dupla contagem |
-| Aba *seedling* | Regime de suprimento de mudas: próprio / terceirizado / compartilhado | Condicional | Seleciona entre preço-sombra e modelagem de ativo |
-| Aba *seedling* | Se próprio: capacidade nominal anual, unidade de capacidade, ciclos por ano, valor investido, vida útil | Escala e parâmetro | Rateio por uso e valor residual |
-| Aba *seedling* | Se compartilhado: número de projetos usuários ou critério de rateio acordado | Parâmetro | Fração alocada |
-| Aba *seedling* | Se terceirizado: preço da muda posto na área e diversidade ofertada | Preço | Preço-sombra; supressão do bloco de CAPEX |
-| Aba *seedling* | Ciclo de produção e ano de desembolso | Temporal | Alocação do capital de giro ao ano correto |
-| Aba *seedling* | Mortalidade em viveiro e taxa de descarte | Técnico | Volume a produzir por muda plantada |
-| Aba *seeding* | Origem das sementes: coleta própria / compra / rede de coletores | Condicional | Seleciona entre modelagem de coleta e preço-sombra |
-| Aba *seeding* | Se coleta própria: número de expedições, espécies, distância, estrutura de beneficiamento e armazenamento | Escala | Custo de coleta e rateio de ativos |
-| Aba *seeding* | Capacidade e ocupação da câmara fria | Escala | Rateio por uso |
-| Aba *seeding* | Número de lotes e análises de qualidade | Escala | Custo de controle de qualidade |
-| Aba ANR | Potencial de regeneração natural avaliado (sim/não) e custo do estudo | Condicional | Custo que determina a elegibilidade do método |
-| Aba ANR | Necessidade de enriquecimento e densidade | Condicional | Habilita subconjunto do bloco de mudas dentro de ANR |
-| Aba ANR | Pressão externa: gado, fogo, invasoras | Escala | Modula isolamento e controle de degradação |
+1. **Custos comuns de projeto** — diagnóstico, planejamento, licenciamento, regularização,
+   georreferenciamento, acesso, isolamento, mobilização, capacitação, engajamento, monitoramento
+   inicial, certificação, transação. Entram no fluxo do projeto e, se houver reporte por método,
+   apenas então são rateados, com o critério explicitado.
+2. **Custos de cadeia de propágulos** — viveiro, capital de giro de mudas, coleta, beneficiamento,
+   armazenamento, análise de qualidade. Atribuíveis diretamente a *seeding* e *seedling*, e a ANR
+   apenas sob enriquecimento.
+3. **Custos de intensidade específica por método** — controle inicial de fatores de degradação e
+   parcela do isolamento cuja intensidade varia com o método.
 
-### Captura da dimensão de compartilhamento
+Essa separação é o que permite reportar, além do VPL total, o VPL de custos atribuíveis por método —
+base correta para comparação — mantendo o custo comum visível como parcela do projeto, e não diluído
+por convenção.
 
-Recomenda-se um padrão único de pergunta, aplicado a toda categoria que envolva ativo: regime de
-acesso (próprio dedicado / próprio compartilhado / de terceiros / serviço contratado), seguido, nos
-casos de ativo próprio, de capacidade nominal, unidade de capacidade, consumo do projeto e vida útil.
-A resposta de regime é o que seleciona a abordagem de inserção — não cabe ao usuário escolher entre
-amortizar, ratear ou lançar integralmente; essa decisão deve ser derivada da estrutura declarada.
+### Parâmetros de nível de projeto exigidos pelas linhas de Ano 0
 
-A unidade de capacidade precisa ser explicitada em cada caso, porque não é única: mudas por ano em
-determinado padrão de recipiente, quilogramas de semente armazenados, horas-máquina. Sem isso, o
-rateio por uso não é auditável.
-
-### Condicionalidades
-
-As condicionalidades que mais reduzem ruído e erro são: suprimir integralmente o bloco de CAPEX de
-viveiro quando o suprimento é terceirizado; suprimir o bloco de certificação quando não há
-comercialização de créditos; suprimir regularização fundiária quando não há pendência dominial;
-suprimir custos de transação financeira quando não há financiamento externo; exibir o bloco de
-enriquecimento em ANR apenas quando declarado; e, em projetos de método único, ocultar os campos de
-rateio entre métodos, exibindo-os apenas quando a fração de área declarada indicar mosaico.
-
-Uma condicionalidade adicional, de natureza distinta, merece existir: uma verificação de fronteira
-que pergunte, para as categorias com sobreposição conhecida — controle inicial de fatores de
-degradação, preparo de solo, monitoramento, overhead — se o custo já foi informado em outro campo.
-É o mecanismo mais simples para conter dupla contagem, que é o risco dominante quando se adiciona uma
-camada de custos de Ano 0 a um questionário que já captura custos de implantação.
+As linhas acima só se resolvem se a plataforma dispuser de parâmetros que hoje podem não estar
+presentes: fração de área por método, distância à base logística, perímetro a isolar, regime de
+suprimento de mudas e de sementes, capacidade e ocupação dos ativos compartilhados, decisão de
+comercializar créditos e padrão adotado, existência de financiamento externo, situação dominial e
+regulatória, vida útil por classe de ativo, base real ou nominal, e taxa de desconto. A ausência de
+qualquer um deles força o preenchimento por convenção, o que é aceitável desde que a convenção seja
+declarada junto ao resultado.
 
 ### Saídas a acrescentar
 
-Para que as escolhas de alocação sejam auditáveis, a ferramenta precisa reportar, além do resultado
-agregado: o custo total desembolsado por ano, sem alocação; o custo alocado por método, com o critério
-de rateio explicitado; e o custo comum não rateado, apresentado separadamente. A comparação entre
-métodos deve ser feita preferencialmente sobre custos atribuíveis, com o custo comum reportado como
-parcela do projeto, e não distribuído por convenção.
+Para que as escolhas de fronteira e de alocação sejam auditáveis a partir do resultado:
+
+- fluxo de caixa anual desagregado, com os custos de Ano 0 identificáveis por linha e por período,
+  incluindo períodos anteriores à implantação;
+- VPL decomposto entre custos de Ano 0, custos recorrentes e benefícios, de modo que se veja quanto
+  do resultado é determinado pelo período inicial;
+- VPL de custos atribuíveis por método, separado do custo comum;
+- indicação explícita quando a TIR for múltipla, inexistente ou não aplicável, com o indicador
+  substituto correspondente;
+- registro das convenções adotadas — critério de rateio, tratamento do capital de giro, base do valor
+  residual, status de custos afundados, base real ou nominal.
+
+### Sensibilidade e cenários
+
+Como o período inicial não sofre desconto, as linhas de Ano 0 concentram a maior alavancagem sobre
+VPL e TIR por unidade de valor, e são as candidatas naturais à análise de sensibilidade. Três
+famílias de parâmetros merecem tratamento prioritário: a fração alocada de ativos compartilhados,
+porque é a mais discricionária; o valor e a existência dos custos condicionais, sobretudo certificação
+e regularização fundiária, porque alternam entre presença e ausência e não entre valores próximos; e
+a vida útil dos ativos de isolamento, porque governa o número de reposições dentro do horizonte e
+afeta assimetricamente o método de menor custo direto.
+
+Para os custos condicionais, a forma adequada é o cenário discreto — com e sem certificação, com e
+sem pendência fundiária —, não a variação contínua em torno de um valor médio, que descreveria um
+projeto inexistente.
 
 ---
 
 ## Incertezas declaradas
 
 - Todo o conteúdo atual do questionário permanece não verificado, pela negativa de política de rede
-  descrita na Etapa 1. Qualquer afirmação sobre ausência de uma categoria na ferramenta é
+  descrita na Etapa 1. Qualquer afirmação sobre ausência de uma categoria naquela ferramenta é
   condicional a essa verificação.
-- Não foi possível determinar se a ferramenta já implementa horizonte temporal, desconto ou
-  distinção entre custo único e recorrente; as recomendações das Etapas 4 e 5 pressupõem que essa
-  estrutura temporal exista ou seja criada.
+- A estrutura interna da plataforma de análise custo-benefício não foi inspecionada. Assume-se um
+  modelo anual de fluxo de caixa incremental descontado com VPL e TIR; se a plataforma opera com
+  periodicidade diferente da anual, com múltiplas óticas (financeira e econômica) ou com tributação
+  modelada, as recomendações sobre período de incidência, tratamento fiscal e escudo de depreciação
+  precisam ser reespecificadas.
 - Exigências regulatórias e de certificação variam por jurisdição e por padrão adotado; os itens 7,
   8, 9 e 14 da Etapa 2 estão descritos genericamente e requerem especificação conforme o contexto
   legal aplicável ao projeto.
