@@ -227,3 +227,93 @@ As fontes prováveis para esses itens são relatórios operacionais de redes de 
 próprios de execução, não manuais técnicos. Manuais de coleta são normativos: descrevem o
 procedimento correto, não o rendimento observado. Das quatro publicações analisadas, apenas uma
 contém números de esforço, e em três parágrafos.
+
+---
+
+## 8. Janela de coleta: o que as fontes efetivamente dizem
+
+### O único caso quantificado
+
+A Circular 131 detalha o cedro-rosa (*Cedrela fissilis*):
+
+- maturidade fisiológica entre **29 e 31 semanas após a antese**, com umidade de 50 % a 60 %;
+- momento ideal de colheita entre **30 e 32 semanas após a antese** — uma janela de **duas semanas**;
+- a mudança de coloração que sinaliza a maturidade ocorre **duas a três semanas antes da deiscência
+  natural**.
+
+É o único ponto do corpus em que a janela é expressa em unidade de tempo. Ela converge para duas a
+três semanas entre o sinal visual de maturação e a perda por dispersão.
+
+### Os demais casos, qualitativos, convergem para o mesmo intervalo
+
+| Espécie | Restrição declarada | Janela implícita |
+|---|---|---|
+| Peroba-rosa (*Aspidosperma polyneuron*) | Dispersa as sementes "quase imediatamente" após mudar de verde para marrom-escuro; coletar antes da dispersão | Dias |
+| Pata-de-vaca (*Bauhinia forficata*) | Autocórica; coletar após virar marrom mas antes da deiscência | Dias a uma semana |
+| Quaresmeira (*Tibouchina pulchra*) | Colher marrons, antes da abertura, por serem sementes minúsculas | Dias |
+| Angico-branco (*Anadenanthera colubrina*) | Coletar após o início da abertura espontânea, quando começa a disseminação | Estreita, do lado oposto |
+| Araucária (*Araucaria angustifolia*) | Pinhões sofrem ataque de roedores e insetos "tão logo as sementes atingem o solo" | Coleta no solo praticamente inviável |
+| Bracatinga (*Mimosa scabrella*) | Colhidos de árvores abatidas ou quando iniciam a queda espontânea | Ligada à queda |
+| Erva-mate (*Ilex paraguariensis*) | Frutos colhidos há mais de três dias iniciam fermentação | Três dias — janela de beneficiamento, não de coleta |
+
+A Circular 126 acrescenta a restrição de planejamento: a melhor época para prever a safra é pouco
+antes da maturidade fisiológica, e essa época "é, em geral, próxima ao momento recomendado para
+coleta, deixando pouco tempo para o planejamento das operações". Ou seja, a janela de decisão é
+quase tão estreita quanto a de execução.
+
+### Composição de mistura
+
+**Nenhuma das quatro publicações trata de composição de mistura para semeadura direta.** As três da
+Embrapa Florestas tratam de banco de sementes e produção de mudas; as duas amazônicas tratam de
+coleta e manejo para viveiro. O folder do Pará lista espécies potenciais para plantio em APP e
+Reserva Legal, mas lista de espécies não é participação em massa.
+
+Essa lacuna é estrutural, não acidental: composição de muvuca é definida por protocolo de
+restauração e por disponibilidade local de sementes, não por manual de tecnologia de sementes.
+
+## 9. Como fechar os dois parâmetros sem inventar dado
+
+### Janela: usar o bloco sazonal, não a janela da espécie nem o ano
+
+A janela individual (2–3 semanas) e o ano civil são ambos errados para dimensionar equipe. A primeira
+superdimensiona, porque supõe que todas as espécies precisam ser coletadas simultaneamente; o
+segundo subdimensiona, porque dilui o pico.
+
+A unidade correta é o **bloco sazonal de frutificação**, dentro do qual as janelas individuais se
+escalonam e a mesma equipe migra entre espécies. Em floresta tropical sazonal, os blocos se separam
+por síndrome de dispersão: espécies anemocóricas de fruto seco concentram-se no fim da estação seca,
+espécies zoocóricas de fruto carnoso na estação chuvosa. Isso reduz o parâmetro de N janelas
+específicas para dois blocos.
+
+O dimensionamento fica:
+
+```
+N_bloco = ( PD_total do bloco / dias úteis do bloco ) × c
+```
+
+onde `c ≥ 1` é o **fator de concentração**: vale 1 quando as espécies do bloco se escalonam
+perfeitamente, e tende à razão entre a duração do bloco e a janela individual quando todas frutificam
+em sincronia. Um único parâmetro interpretável, e o candidato natural a análise de sensibilidade —
+porque é ele, e não a área nem o rendimento, que domina o número de coletores.
+
+### Composição: separar a mistura em duas frações com estruturas de custo distintas
+
+A mistura de semeadura direta tem duas frações de natureza econômica diferente:
+
+| Fração | Conteúdo típico | Participação em massa | Estrutura de custo |
+|---|---|---|---|
+| Recobrimento e adubação verde | Espécies de crescimento rápido e sementes agrícolas de adubação verde | Alta | **Preço de mercado por quilo** — existe oferta comercial |
+| Diversidade nativa | Espécies florestais de sucessão tardia, alta riqueza | Baixa | **Mão de obra de coleta** — é a fração que exige a estrutura deste documento |
+
+A consequência é que a fórmula do módulo não é nem só preço nem só mão de obra: é híbrida.
+
+```
+custo_semente_ha = S × [ f_agrícola × preço_kg + f_nativa × Σ_g ( p_g × w_g / ρ_g ) ]
+```
+
+E o dimensionamento de coletores incide **apenas sobre `f_nativa`** — a fração menor em massa e maior
+em custo unitário. Aplicar a estrutura de mão de obra à massa total da mistura superestimaria o
+número de coletores por um fator igual ao inverso da fração nativa.
+
+A participação em massa de cada fração é parâmetro de protocolo de restauração, a ser obtido da
+prescrição técnica do projeto ou de rede de sementes local — não das fontes analisadas.
