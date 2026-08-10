@@ -394,6 +394,53 @@ bloco, e tende à razão entre duração do bloco e janela individual — algo p
 **intraespecífica**, entre indivíduos da mesma espécie, o que aumenta o rendimento por espécie sem
 implicar sincronia entre espécies. Isso justifica um `c` intermediário, e não extremo.
 
+### Composição de referência para semeadura direta (protocolo brasileiro)
+
+| Fração ecológica | Participação em massa | Natureza | Grupo funcional | ρ |
+|---|---|---|---|---|
+| Adubação verde e cobertura (guandu, crotalária, milheto) | 60–70 % | Semente agrícola comercial, majoritariamente exótica | Compra | preço/kg |
+| Árvores pioneiras nativas | 20–30 % | Coleta | A — sem escalada | 0,9 |
+| Secundárias e clímax | 10 % | Coleta | B — dossel, escalada | 0,3 |
+
+Densidade total: 10 a 30 kg/ha de mistura; alvo de 50 a 100 sementes viáveis por metro quadrado.
+
+### Coeficiente de esforço por quilo de mistura
+
+```
+k = Σ_g ( p_g / ρ_g )        pessoa-dia por quilo de mistura
+PD_ha = k × S
+```
+
+| Cenário | Composição | `k` (pessoa-dia/kg) |
+|---|---|---|
+| Protocolo padrão | 65 % agrícola comprado + 25 % A + 10 % B | **0,61** |
+| Mistura 100 % nativa | 65 % A + 25 % A + 10 % B | **1,33** |
+
+A decisão sobre a fração de adubação verde mais que dobra o requisito de mão de obra. É o parâmetro
+mais sensível do módulo, acima da área e do rendimento.
+
+### Concentração do esforço na fração de diversidade
+
+Sob o protocolo padrão, com participação em massa de 25 % para pioneiras e 10 % para
+secundárias e clímax, a repartição do pessoa-dia se inverte:
+
+| Fração | Massa | Pessoa-dia | Participação no esforço |
+|---|---|---|---|
+| Pioneiras (grupo A) | 25 % | 0,278 × S | 45 % |
+| Secundárias e clímax (grupo B) | 10 % | 0,333 × S | **55 %** |
+
+Dez por cento da massa consome mais da metade do esforço de coleta. Qualquer parametrização por
+rendimento médio ponderado por massa erra essa distribuição, e erra na direção de subestimar o custo
+da diversidade — que é exatamente a fração que a restauração existe para entregar.
+
+### Consistência entre massa e densidade
+
+As duas especificações do protocolo — quilos por hectare e sementes viáveis por metro quadrado — se
+restringem mutuamente através do número de sementes por quilo de cada espécie. Espécies clímax de
+semente grande consomem massa sem entregar densidade. A composição em massa precisa ser verificada
+contra o alvo de densidade antes de alimentar o módulo, sob pena de as duas entradas descreverem
+misturas diferentes.
+
 ### Efeito de dois blocos sobre a estrutura de custo
 
 Com dois blocos separados por intervalos, o beneficiamento do primeiro bloco pode ocorrer no
