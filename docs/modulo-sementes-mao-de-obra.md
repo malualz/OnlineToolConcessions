@@ -317,3 +317,86 @@ número de coletores por um fator igual ao inverso da fração nativa.
 
 A participação em massa de cada fração é parâmetro de protocolo de restauração, a ser obtido da
 prescrição técnica do projeto ou de rede de sementes local — não das fontes analisadas.
+
+---
+
+## 10. Estação de frutificação em países tropicais (revisão de literatura)
+
+### A distinção que precede qualquer número
+
+A literatura fenológica reporta **duração da fenofase de frutificação** — o período em que há frutos
+na árvore. Isso não é a janela de coleta. A fenofase inclui o desenvolvimento do fruto imaturo; a
+janela de coleta é o intervalo entre maturidade fisiológica e dispersão, que as fontes Embrapa
+situam em duas a três semanas. Usar a duração da fenofase como janela subdimensionaria a equipe por
+uma ordem de grandeza.
+
+As duas grandezas cumprem papéis distintos no dimensionamento: a fenofase e a época de floração
+definem a **largura do bloco sazonal**; a janela de coleta define a **oportunidade por espécie**
+dentro do bloco.
+
+### Duração da fenofase por época de floração
+
+Em floresta tropical decídua, a duração da fenofase de frutificação varia conforme a estação de
+floração: 3 a 4 meses em espécies de floração na seca, 6 a 9 meses em espécies de floração na
+estação chuvosa, e até 11 meses em espécies de floração de verão. A frutificação prossegue por 2 a 3
+meses após o pico de floração, e os eventos fenológicos da maioria das espécies têm periodicidade de
+8 a 12 meses.
+
+### Sazonalidade por síndrome de dispersão
+
+A literatura confirma a separação em blocos por síndrome, com um refinamento:
+
+| Síndrome | Época de dispersão | Mecanismo |
+|---|---|---|
+| Anemocórica | Pico na estação seca; dispersão no fim da seca e na transição seca-chuva | A perda de folhas aumenta a circulação de vento |
+| Autocórica | Estação seca e transição chuva-seca | — |
+| Zoocórica | Frutifica o ano todo, com pico na estação chuvosa | Disponibilidade de dispersores e umidade |
+
+O espectro de dispersão depende da sazonalidade climática: quanto mais marcada a estação seca, mais
+concentrado o bloco anemocórico. Anemocóricas e autocóricas compartilham o bloco seco; zoocóricas
+ocupam o bloco chuvoso com cauda ao longo do ano.
+
+### Padrões por região
+
+| Região | Estrutura do ano | Observação para dimensionamento |
+|---|---|---|
+| Floresta tropical sazonalmente seca | Período reprodutivo concentrado na estação seca, com sub-picos no início (out–nov) e no fim (fev–mar) | Bloco longo, mas bimodal internamente |
+| Amazônia (Maranhense) | Floração e frutificação o ano todo, com **dois picos de frutificação**: mar–jul e out–dez | Dois blocos por ano, não um |
+| Amazônia Central | Período seco de 5 a 6 meses (jun–nov); forte sincronia entre indivíduos, ligada à precipitação | Sincronia intraespecífica alta favorece o rendimento por espécie e enrijece a janela |
+| Bacia do Congo | Estação chuvosa out–mai, seca jun–set | **Sem dado de frutificação localizado**; existe base de fenologia histórica publicada, não consultada |
+| Sudeste Asiático (dipterocarpáceas) | Floração geral e frutificação em massa em intervalos irregulares de **2 a 10 anos**, frequentemente associados ao ENSO, com meses de fartura seguidos de 2 a 10 anos de escassez | O modelo anual não se aplica |
+
+### O caso que quebra o modelo anual
+
+Em florestas de dipterocarpáceas do Sudeste Asiático, a reprodução é supra-anual e sincronizada em
+escala de centenas a milhares de quilômetros. Não há estação anual de coleta a planejar: há eventos
+esporádicos e imprevisíveis. Combinado ao fato de sementes de dipterocarpáceas serem notoriamente
+recalcitrantes — o que impede estoque regulador —, isso significa que a demanda de coletores em ano
+de floração geral é extrema e nula nos demais.
+
+Se o modelo pretende cobrir o Sudeste Asiático, o parâmetro de janela precisa ser substituído por
+uma estrutura de evento com probabilidade anual, e o dimensionamento de equipe deixa de ser
+planejável e passa a ser mobilizável sob aviso.
+
+### Convenções propostas para a Amazônia, com 100 % de espécies nativas
+
+| Parâmetro | Valor proposto | Base |
+|---|---|---|
+| Blocos por ano | 2 | Picos de frutificação mar–jul e out–dez |
+| Duração de cada bloco | 3 a 5 meses | Amplitude dos picos reportados |
+| Janela de coleta por espécie | 2 a 3 semanas | Cedro-rosa quantificado e convergência qualitativa (seção 8) |
+| Fator de concentração `c` | Faixa de 2 a 4, em sensibilidade | Convenção — razão entre bloco e janela, corrigida por escalonamento parcial entre espécies |
+| Dias úteis por mês de bloco | Convenção do projeto | Depende de chuva e acesso |
+
+O fator `c` tem limites interpretáveis: vale 1 se as espécies se escalonam perfeitamente ao longo do
+bloco, e tende à razão entre duração do bloco e janela individual — algo próximo de 6 para bloco de
+4 meses — se todas frutificam em sincronia. A sincronia documentada na Amazônia Central é
+**intraespecífica**, entre indivíduos da mesma espécie, o que aumenta o rendimento por espécie sem
+implicar sincronia entre espécies. Isso justifica um `c` intermediário, e não extremo.
+
+### Efeito de dois blocos sobre a estrutura de custo
+
+Com dois blocos separados por intervalos, o beneficiamento do primeiro bloco pode ocorrer no
+intervalo até o segundo, o que achata a demanda de mão de obra sem reduzi-la. Também implica que a
+equipe é sazonal em dois períodos por ano, e não contínua — o que muda o regime de contratação e o
+custo de mobilização, que passa a incidir duas vezes.
